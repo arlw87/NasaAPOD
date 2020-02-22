@@ -1,0 +1,7 @@
+@font-face {
+src: url(“Nasa.ttf”);
+}
+
+.label{
+    -fx-font-family: 'Nasa';
+}

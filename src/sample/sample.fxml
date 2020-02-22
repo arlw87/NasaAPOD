@@ -1,0 +1,77 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Box?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.StackPane?>
+<BorderPane fx:controller="sample.Controller"
+            xmlns:fx="http://javafx.com/fxml" fx:id="mainGUI" style="-fx-background: white;">
+    <top>
+        <VBox alignment="center"
+              BorderPane.alignment="center">
+            <HBox alignment="center" BorderPane.alignment="center">
+                <Label text="Astronomy Picture of the day" fx:id = "programTitle">
+                </Label>
+                <ImageView fx:id="smallLogo">
+                </ImageView>
+            </HBox>
+            <HBox alignment="center" BorderPane.alignment="center" style="-fx-spacing: 10;">
+                <Label text="Select Date" >
+                        <font>
+                            <Font size="30"></Font>
+                        </font>
+                </Label>
+                <DatePicker fx:id="imageDateChooser" prefHeight="40" style="-fx-font-size: 20px;" showWeekNumbers="false">
+                </DatePicker>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" BorderPane.alignment="CENTER" style="-fx-spacing: 20;">
+                <Label text = "SomeTitle" fx:id="pictureTitle" style="-fx-font-weight: bold; -fx-underline: true;">
+                    <font>
+                        <Font size="36"></Font>
+                    </font>
+                </Label>
+            <StackPane>
+                <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+                    <Label text="Image Loading" fx:id = "imageLoadLabel">
+                        <font>
+                            <Font size="30"></Font>
+                        </font>
+                    </Label>
+                    <ProgressBar fx:id="imageLoadProgress" minWidth="200" minHeight="40">
+                    </ProgressBar>
+                </VBox>
+                <ImageView fx:id="pictureViewer" style="-fx-border-color: black; -fx-border-style: solid; -fx-border-width : 20;">
+                </ImageView>
+            </StackPane>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" BorderPane.alignment="CENTER" maxHeight="80" minWidth="60" style="-fx-spacing: 20;">
+            <padding>
+                <Insets bottom="10" left="10"/>
+            </padding>
+            <Label text = "Some Explanation" fx:id="pictureExplanation" alignment="center"
+                   BorderPane.alignment="center" style="-fx-font-size: 20; -fx-margin: 10px;" wrapText="true">
+            </Label>
+            <Button fx:id="moreInfo" text="More..." style="-fx-font-size: 25;" minWidth="110">
+                <HBox.margin>
+                    <Insets right="10"/>
+                </HBox.margin>
+            </Button>
+        </HBox>
+
+    </bottom>
+
+</BorderPane>
